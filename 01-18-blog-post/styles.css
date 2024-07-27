@@ -1,0 +1,58 @@
+/* fonts */
+/* 
+    font-family: 'Cinzel', serif;
+    font-family: 'PT Serif', serif;
+*/
+*, ::before, ::after{ box-sizing: border-box;}
+
+:root{
+  --darkergrey: #414141;
+  --lightergrey: #7D7D7D;
+  --links: #CA5E10;
+}
+
+body{
+  color: var(--lightergrey);
+  font-family: 'PT Serif', serif;
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+a{
+  color: var(--links);
+}
+
+.container {
+  width: 90%;
+  max-width: 39rem;
+  margin: 0 auto;
+}
+
+article header{
+  text-align: center;
+  max-width: 75rem;
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+
+
+/* title */
+article header h1{
+  color: var(--darkergrey);
+  font-family: 'Cinzel', serif;
+  font-size: 6rem;
+  line-height: 5rem;
+  margin-top: 7rem;
+  margin-bottom: 3rem;
+}
+
+.subtitle{
+  font-size: 2.25rem;
+  margin-bottom: 6rem;
+  line-height: 1.1;
+}
+
+.lead{
+  font-size: 1.3125rem;
+}
+
