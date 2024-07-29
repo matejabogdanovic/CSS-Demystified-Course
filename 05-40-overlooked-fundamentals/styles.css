@@ -1,0 +1,209 @@
+*, *::before, *::after{
+  box-sizing: border-box;
+  /* outline: solid lime 1px; */
+}
+
+:root {
+  --clr-base-400: #5e5e5e;
+  --clr-base-500: #494949;
+
+  --clr-ui-300: #f8e2ff;
+  --clr-ui-400: #580d3a;
+  --clr-ux-300: #e2ffea;
+  --clr-ux-400: #115926;
+  --clr-dev-300: #e2fcff;
+  --clr-dev-400: #024f4f;
+
+  --clr-accent-400: #7e47c5;
+
+  --ff-accent: "Podkova", serif;
+  --ff-base: "Open Sans", sans-serif;
+
+  --fs-300: 0.75rem;
+  --fs-400: 1rem;
+  --fs-500: 2rem;
+
+  --fw-400: 400;
+  --fw-700: 700;
+
+  --shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.1);
+  --border-radius: 0.75rem;
+}
+
+body{
+  margin: 0;
+  font-family: var(--ff-base);
+  font-size: 16px;
+}
+
+.candidate{
+  padding: 1rem;
+}
+
+.candidate h2{
+  margin: 0;
+}
+
+.candidate .name{
+  font-family: var(--ff-accent);
+  font-weight: bold;
+  font-size: 36px;
+}
+
+.candidate .roles{
+  margin: 0;
+}
+
+.candidate .bio{
+  line-height: 1.6;
+}
+
+.candidate> img{
+  border-radius: 1rem;
+}
+
+.btn{
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 1.4rem;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.btn--accent{
+  background-color: var(--clr-accent-400);
+  color: var(--clr-dev-300);
+}
+
+.candidate .btn{
+  margin: auto 0 0 auto;
+  width: 160px;
+  height: 50px;
+}
+
+.candidate .social{
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.candidate .social li{
+  padding: 0 0.8rem;
+}
+
+.candidate .social li a img{
+  width: 1.4em;
+  height: 1.4em;
+}
+
+.tag{ 
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0 0.3em;
+  padding: 0.5em 1.2em;
+  border-radius: 100vw;
+}
+
+.tag--ui{
+  background-color:#f8e2ff;
+  color:  #580d3a;
+}
+
+.tag--ux{
+  background-color: #e2ffea;
+  color: #115926;
+}
+
+.tag--dev{
+  background-color: #e2fcff;
+  color: #024f4f;
+}
+
+
+
+@media (max-width: 540px) {
+  .candidate{
+    width: 100%;
+  }
+
+  .candidate .social{
+   flex-direction: column; 
+  }
+
+  .candidate .btn{
+    margin: auto;
+  }
+}
+
+
+/* /////////////////
+   Layout related
+   no need to touch any of this
+//////////////////*/
+
+.candidates {
+  max-width: 70em;
+  margin: 0 auto;
+  padding: 2em;
+  display: grid;
+  gap: 2em;
+}
+
+.candidate {
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-areas:
+    "img social"
+    "name name"
+    "role role"
+    "bio bio"
+    "button button";
+  gap: 0.5em;
+  box-shadow: var(--shadow);
+  border-radius: var(--border-radius);
+}
+
+@media (min-width: 540px) {
+  .candidate {
+    grid-template-columns: min-content minmax(15rem, 22.5rem);
+    grid-template-rows: min-content min-content 1fr auto;
+    grid-template-areas:
+      "img name"
+      "img role"
+      "img bio"
+      "social button";
+  }
+}
+
+@media (min-width: 1100px) {
+  .candidates {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+.candidate img {
+  grid-area: img;
+}
+.candidate .name {
+  grid-area: name;
+}
+.candidate .roles {
+  grid-area: role;
+}
+.candidate .bio {
+  grid-area: bio;
+}
+.candidate .social {
+  grid-area: social;
+}
+.candidate .btn {
+  grid-area: button;
+}
