@@ -1,0 +1,84 @@
+/* Font used
+font-family: 'PT Sans', sans-serif; 
+*/
+*, *::before, *::after{
+  box-sizing: border-box;
+}
+
+:root{
+  --neutralDark: #171717;
+  --neutralWhite: #fff;
+  --accent: #59E89C;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  font-family: PT Sans, sans-serif;
+  color: var(--neutralDark);
+}
+/* 
+.row{
+  display: flex;
+}
+
+.center{
+  justify-content: center;
+  align-items: center;
+} */
+
+.card--light{
+  --bg: white;
+}
+
+.card{
+  background-color: var(--bg);
+  text-align: center;
+  padding: 3rem;
+}
+
+.card__title{
+  font-size: 36px;
+  font-weight: 400;
+  margin-top: 0;
+}
+
+.card__title b{
+  font-weight: 700;
+}
+
+.card__text{
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+.btn--accent{
+  --txt: var(--neutralDark);
+  --bg: var(--accent);
+}
+
+.btn{
+  display: inline-block;
+  color: var(--txt);
+  background-color: var(--bg);
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 1rem 3rem;
+}
+
+.hero{
+  background-image: url('./assets/hero.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 1rem;
+}
+
+.hero .card{
+  margin: 10rem auto;
+  width: 900px;
+  max-width: 70%;
+}
